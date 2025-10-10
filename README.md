@@ -7,6 +7,7 @@ Check CONTRIBUTORS.md and open a PR!
 
 ## Contributors
 See [CONTRIBUTORS.md](./CONTRIBUTORS.md)
+- Pratima Rajbanshi
 - Sanjida Islam
 - Bamidele-Sanni Oluwatamilore
 
