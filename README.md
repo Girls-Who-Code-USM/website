@@ -1,4 +1,4 @@
-# Girls Who Code USM Website
+# Project Title
 One-line description here
 
 ## Installation
@@ -9,4 +9,3 @@ Check CONTRIBUTORS.md and open a PR!
 
 ## Contributors
 See [CONTRIBUTORS.md](./CONTRIBUTORS.md)
-- Sadia Zaman
