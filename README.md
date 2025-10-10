@@ -10,6 +10,8 @@ See [CONTRIBUTORS.md](./CONTRIBUTORS.md)
 - Pratima Rajbanshi
 - Sanjida Islam
 - Bamidele-Sanni Oluwatamilore
+- Sadia Zaman
+- Ramiisa
 - Binita Dkl
 
 This repo uses the MIT liscense.
