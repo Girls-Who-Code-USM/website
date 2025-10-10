@@ -9,6 +9,7 @@ Check CONTRIBUTORS.md and open a PR!
 
 ## Contributors
 See [CONTRIBUTORS.md](./CONTRIBUTORS.md)
+- Sanjida Islam
 - Bamidele-Sanni Oluwatamilore
 
 This repo uses the MIT liscense.
