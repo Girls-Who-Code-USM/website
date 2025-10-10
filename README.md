@@ -9,6 +9,9 @@ Check CONTRIBUTORS.md and open a PR!
 
 ## Contributors
 See [CONTRIBUTORS.md]
+Pratima Rajbanshi
+Sanjida Islam
+Bamidele-Sanni Oluwatamilore
 Binita Dkl
 
 This repo uses the MIT liscense.
