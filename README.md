@@ -1,9 +1,7 @@
 # Project Title
-One-line description here
 
 ## Installation
-(coming soon)
-
+Empowering the next-generation of female technologists through community, education, and real-world coding experience.
 ## How to Contribute
 Check CONTRIBUTORS.md and open a PR!
 
