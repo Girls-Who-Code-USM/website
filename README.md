@@ -8,4 +8,7 @@ Empowering the next generation of female technologists through community, educat
 Check CONTRIBUTORS.md and open a PR!
 
 ## Contributors
-See [CONTRIBUTORS.md](./CONTRIBUTORS.md)
+See [CONTRIBUTORS.md]
+Binita Dkl
+
+This repo uses the MIT liscense.
