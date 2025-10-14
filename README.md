@@ -64,15 +64,7 @@ Guidelines:
 
 ## Contributors
 
-Current contributors include:
-
-- Rashika Karmacharya
-- Pratima Rajbanshi
-- Sanjida Islam
-- Bamidele-Sanni Oluwatamilore
-- Sadia Zaman
-- Ramiisa
-- Binita Dkl
+See the full contributors list in `contributors.md`.
 
 ## License
 
