@@ -1,0 +1,18 @@
+body{
+    text-align:center;
+    background-color: aliceblue;
+}
+h1{
+    color:slateblue;
+}
+h3{
+    color:black;
+}
+p{
+    color:gray;
+}
+header{
+    background-color:white ;
+    font-size: 18px;
+    padding: 10px;
+}
