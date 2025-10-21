@@ -5,13 +5,13 @@ Thank you to everyone who contributes to Girls Who Code USM — Website. This fi
 
 ## Current contributors
 
-- Rashika Karmacharya
-- Pratima Rajbanshi
-- Sanjida Islam
-- Bamidele-Sanni Oluwatamilore
-- Sadia Zaman
-- Ramiisa
-- Binita Dkl
+- Rashika Karmacharya - Contributor - GitHub: rashika-k - Junior
+- Pratima Rajbanshi - Contributor - GitHub: appyjuss - Senior
+- Sanjida Islam - Contributor - GitHub: KuLMaN1010 - Senior
+- Bamidele-Sanni Oluwatamilore - Contributor - GitHub: Tamil0re - Freshman
+- Sadia Zaman - Contributor - GitHub: Sadiazaman067 - Freshman
+- Ramiisa - Contributor - GitHub: ramiisa - Freshman
+- Binita Dkl - Contributor - GitHub: binitadkl - Junior
 
 ## How to add yourself
 
