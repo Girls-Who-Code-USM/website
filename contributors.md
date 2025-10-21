@@ -12,6 +12,7 @@ Thank you to everyone who contributes to Girls Who Code USM — Website. This fi
 - Sadia Zaman
 - Ramiisa
 - Binita Dkl
+- Shidisha Watts
 
 ## How to add yourself
 
