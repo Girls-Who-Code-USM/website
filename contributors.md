@@ -14,6 +14,7 @@ Thank you to everyone who contributes to Girls Who Code USM — Website. This fi
 - Ramiisa - Contributor - GitHub: ramiisa - Freshman
 - Binita Dkl - Contributor - GitHub: binitadkl - Junior
 - Shidisha Watts - Contributor - Github:Dasha-Watts - Freshman
+- Momina Azam - Contributor - Github: mominaaazam - Sophomore
 
 
 ## How to add yourself
