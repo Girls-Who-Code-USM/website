@@ -1,0 +1,315 @@
+:root {
+    --primary: #d16ff7;
+    --secondary: #f3b3ff;
+    --text-dark: #2c2c2c;
+    --text-light: #555;
+    --bg-light: #faf7ff;
+    --gradient: linear-gradient(135deg, #f3b3ff, #d16ff7);
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+  }
+  
+  body {
+    background: var(--bg-light);
+    color: var(--text-dark);
+    line-height: 1.6;
+  }
+ 
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  /* NAVBAR */
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 3rem;
+    background: rgba(255,255,255,0.8);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .logo-circle {
+    background: var(--gradient);
+    color: white;
+    font-weight: bold;
+    padding: 0.5rem 0.8rem;
+    border-radius: 50%;
+  }
+  
+  .logo-text h1 {
+    font-size: 1.1rem;
+  }
+  
+  .logo-text p {
+    font-size: 0.8rem;
+    color: var(--text-light);
+  }
+  
+  .navbar ul {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+  }
+  
+  .navbar a {
+    text-decoration: none;
+    color: var(--text-dark);
+    font-weight: 500;
+  }
+ 
+  .navbar a:hover {
+    color: var(--primary);
+  }
+  
+  .btn-primary {
+    background: var(--gradient);
+    color: #fff;
+    padding: 0.7rem 1.4rem;
+    border-radius: 8px;
+    text-decoration: none;
+  }
+ 
+  .btn-primary:hover {
+    filter: brightness(1.05);
+  }
+  
+  .btn-outline {
+    border: 2px solid var(--primary);
+    color: var(--primary);
+    padding: 0.7rem 1.4rem;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: 0.3s;
+  }
+  
+  .btn-outline:hover {
+    background: var(--primary);
+    color: white;
+  }
+  
+  /* HERO */
+  .hero {
+    position: relative;
+    background: url('https://placehold.co/1600x800') center/cover no-repeat;
+    color: white;
+    text-align: center;
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.3);
+  }
+  
+  .hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 700px;
+  }
+  
+  .hero h2 span {
+    color: #ff8efc;
+  }
+  
+  .hero p {
+    margin: 1rem 0;
+  }
+ 
+  .tag {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.18);
+    padding: 0.4rem 0.8rem;
+    border-radius: 999px;
+    font-size: 0.85rem;
+    letter-spacing: 0.02em;
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+  }
+  
+  .stats {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin: 2rem 0;
+  }
+  
+  .stats h3 {
+    font-size: 1.8rem;
+    color: var(--secondary);
+  }
+  
+  .hero-buttons a {
+    margin: 0 0.5rem;
+  }
+  
+  /* SECTIONS */
+  .section {
+    padding: 5rem 10%;
+    text-align: center;
+  }
+  
+  .section h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  
+  .section span {
+    color: var(--primary);
+  }
+  
+  .center-text {
+    max-width: 800px;
+    margin: 0 auto 3rem;
+    color: var(--text-light);
+  }
+  
+  /* ABOUT CARDS */
+  .cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+  }
+  
+  .card {
+    background: white;
+    padding: 2rem;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    width: 300px;
+    transition: transform 0.3s;
+  }
+  
+  .card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .icon {
+    font-size: 2rem;
+    color: var(--primary);
+    margin-bottom: 1rem;
+  }
+  
+  /* EVENTS */
+  .event-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+  }
+  
+  .event-card {
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    width: 320px;
+    text-align: left;
+    overflow: hidden;
+  }
+  
+  .event-card img {
+    width: 100%;
+    border-radius: 16px 16px 0 0;
+  }
+  
+  .event-card h3 {
+    margin: 1rem;
+    color: var(--text-dark);
+  }
+  
+  .event-card p {
+    margin: 0 1rem;
+    color: var(--text-light);
+  }
+  
+  .event-card span {
+    display: block;
+    margin: 1rem;
+    color: #777;
+  }
+  
+  /* FOOTER */
+  footer {
+    background: #1f1f3f;
+    color: #eee;
+    padding: 3rem 10%;
+  }
+  
+  .footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 2rem;
+    margin-bottom: 2rem;
+  }
+  
+  .footer-col h3, .footer-col h4 {
+    color: #fff;
+  }
+  
+  .footer-col ul {
+    list-style: none;
+  }
+  
+  .footer-col a {
+    text-decoration: none;
+    color: #ddd;
+  }
+  
+  .footer-bottom {
+    text-align: center;
+    color: #aaa;
+    border-top: 1px solid #333;
+    padding-top: 1rem;
+  }
+ 
+  .btn-primary:focus-visible,
+  .btn-outline:focus-visible,
+  .navbar a:focus-visible {
+    outline: 3px solid var(--primary);
+    outline-offset: 2px;
+  }
+ 
+  @media (max-width: 768px) {
+    .section {
+      padding: 3rem 6%;
+    }
+    .stats {
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .cards, .event-grid {
+      gap: 1rem;
+    }
+    .card, .event-card {
+      width: 100%;
+      max-width: 360px;
+    }
+    .navbar {
+      padding: 0.75rem 1rem;
+    }
+    .navbar ul {
+      gap: 1rem;
+    }
+  }
+  
