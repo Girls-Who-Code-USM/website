@@ -222,7 +222,10 @@
     background: white;
     border-radius: 16px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-    width: 320px;
+    /* edited max-width to make cards similar to model website */
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
     text-align: left;
     overflow: hidden;
   }
@@ -311,5 +314,159 @@
     .navbar ul {
       gap: 1rem;
     }
+  }
+  
+  /* New Event section styles */
+  .events-controls {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
+  }
+
+  .filter-group {
+    display: inline-flex;
+    gap: 0.5rem;
+    background: transparent;
+    border-radius: 999px;
+    padding: 0.25rem;
+  }
+
+  .filter-btn {
+    background: rgba(255,255,255,0.9);
+    border: 1px solid rgba(209,111,247,0.18);
+    color: var(--text-dark);
+    padding: 0.5rem 1rem;
+    border-radius: 999px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 180ms;
+  }
+
+  .filter-btn.active,
+  .filter-btn:focus {
+    background: linear-gradient(90deg, rgba(209,111,247,0.12), rgba(243,179,255,0.06));
+    border-color: var(--primary);
+    color: var(--primary);
+    box-shadow: 0 6px 18px rgba(209,111,247,0.08);
+  }
+
+  .event-grid {
+    max-width: 1280px;  /* total content width (change to taste) */
+    margin: 0 auto; /* center the grid */
+    display: grid;
+    /* Force three columns on wide screens so cards sit on one line and spread across the container */
+    grid-template-columns: repeat(3, 1fr);  /* three equal columns */
+    gap: 28px;
+    align-items: stretch;
+
+  }
+
+  /* Responsive fallbacks */
+@media (max-width: 1100px) {
+  .event-grid { grid-template-columns: repeat(2, 1fr); max-width: 920px; }
+}
+@media (max-width: 720px) {
+  .event-grid { grid-template-columns: 1fr; padding: 0 1.25rem; }
+  .event-hero { height: 180px; }
+}
+
+  /* --- Make event cards wide and evenly spaced (fluid / responsive) --- */
+  /* Just like the model page*/
+  .events {padding: 3rem 6%; }
+
+  .event-card {
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 10px 30px rgba(15,12,35,0.06);
+  transition: transform .22s, box-shadow .22s;
+}
+
+  .event-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(15,12,35,0.09);
+  }
+
+  .event-hero{
+    position: relative;
+    /* taller hero makes the card feel wider and more substantial */
+    height: 200px;
+    overflow: hidden;
+  }
+
+  .event-hero img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .event-badge {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    background: var(--primary);
+    color: white;
+    padding: 0.35rem 0.6rem;
+    border-radius: 999px;
+    font-size: 0.8rem;
+    box-shadow: 0 6px 20px rgba(209,111,247,0.15);
+  }
+
+  .event-body {
+    padding: 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    flex: 1 1 auto;
+  }
+  /* The code below keeps the images hidden */
+  .event-hero { display: none; }
+  .event-body { padding-top: 1rem; }
+  /* Card typography: slightly smaller for a compact look */
+  .event-card h3{ font-size: 1.0rem; margin: 0 }
+  .event-card .event-desc{ color: var(--text-light); margin-top: 0.5rem; font-size: 0. ninerem; }
+
+  .event-meta {
+    display:flex;
+    gap:1rem;
+    align-items:center;
+    color: #8b7b9a;
+    font-size: 0.9rem;
+    margin-top: 0.75rem;
+  }
+
+  .event-meta svg{ width: 18px; height: 18px; opacity: 0.9 }
+
+  .event-actions{ margin-top: auto; display:flex; gap:0.75rem }
+
+  .btn-outline.secondary {
+  padding: 12px 18px;
+  border-radius: 10px;
+  width: 100%;
+  text-align: center;
+  font-weight: 600;
+}
+
+  .btn-outline.secondary:hover { background: rgba(209,111,247,0.04) }
+
+  /* Modal */
+  .modal { display: none; position: fixed; inset: 0; z-index: 9999; }
+  .modal[aria-hidden="false"]{ display: block }
+  .modal-overlay { position:absolute; inset:0; background: rgba(5,5,10,0.5); }
+  .modal-panel { position: absolute; left: 50%; top: 50%; transform: translate(-50%,-50%); width: min(900px, 95%); background: white; border-radius: 12px; box-shadow: 0 30px 80px rgba(10,8,20,0.4); overflow: hidden; }
+  .modal-inner { display:flex; gap:1rem; }
+  .modal-image { width: 45%; height: 100%; object-fit: cover; display:block }
+  .modal-content{ padding: 1.25rem 1.5rem; width:55% }
+  .modal-close{ position:absolute; right:10px; top:10px; background:transparent; border:none; font-size:1.2rem; cursor:pointer }
+  .modal-title{ margin-top:0 }
+  .modal-meta{ list-style:none; padding:0; margin:0.75rem 0; color: #777 }
+
+  @media (max-width: 720px){
+    .modal-inner{ flex-direction:column }
+    .modal-image{ width:100%; height:180px }
+    .modal-content{ width:100% }
   }
   

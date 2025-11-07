@@ -63,7 +63,42 @@
     <h2>Upcoming <span>Events</span></h2>
     <p class="center-text">Join us for exciting events that will expand your coding skills, build your network, and inspire your tech journey.</p>
 
+    <div class="events-controls">
+      <div class="filter-group" role="tablist" aria-label="Event frequency filters">
+        <button class="filter-btn active" data-filter="all" role="tab" aria-selected="true">All</button>
+        <button class="filter-btn" data-filter="weekly" role="tab">Weekly</button>
+        <button class="filter-btn" data-filter="monthly" role="tab">Monthly</button>
+        <button class="filter-btn" data-filter="annual" role="tab">Annual</button>
+      </div>
+    </div>
+
+    <div id="events-container" class="event-grid" aria-live="polite">
+      <!-- Cards rendered by script.js -->
+    </div>
+
+    <!-- Event detail modal -->
+    <div id="event-modal" class="modal" role="dialog" aria-modal="true" aria-hidden="true">
+      <div class="modal-overlay" data-close="true"></div>
+      <div class="modal-panel" role="document">
+        <button class="modal-close" aria-label="Close event details">✕</button>
+        <div class="modal-inner">
+          <img src="" alt="" class="modal-image" />
+          <div class="modal-content">
+            <h3 class="modal-title"></h3>
+            <p class="modal-desc"></p>
+            <ul class="modal-meta">
+              <li class="modal-date"></li>
+              <li class="modal-location"></li>
+            </ul>
+            <a href="#" class="btn-outline modal-cta">Register / Learn more</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </section>
+
+  <script src="script.js"></script>
 
   <!-- FOOTER -->
   <footer>
