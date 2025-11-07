@@ -1,6 +1,6 @@
 # Girls Who Code at USM — Website
 
-Empowering the next generation of female technologiest thorugh community, education and real-world coding experience.
+Empowering the next generation of female technologiest through community, education and real-world coding experience.
 
 This repository contains a simple front-end project (HTML, CSS, and JavaScript) used for workshops, portfolio demos, and community outreach.
 
