@@ -464,6 +464,24 @@
   .modal-title{ margin-top:0 }
   .modal-meta{ list-style:none; padding:0; margin:0.75rem 0; color: #777 }
 
+  /* Join modal specifics */
+  .join-modal-inner { align-items: center; padding: 18px; }
+  .join-qr-wrap { flex: 0 0 260px; text-align: center; }
+  .join-qr { width: 220px; height: 220px; object-fit: contain; border-radius: 8px; background: #fff; box-shadow: 0 8px 24px rgba(15,12,35,0.06); }
+  .join-code { margin-top: 0.6rem; font-weight: 700; color: var(--text-dark); font-size: 1.25rem; }
+  .join-actions { padding-left: 1rem; flex: 1; }
+  .join-actions p { margin-bottom: 1rem; color: var(--text-light); }
+  .join-open-link { display: inline-block; }
+
+  /* Join button — remove the default black outline but keep an accessible purple focus ring */
+  #join-loop-btn { border: none; }
+  #join-loop-btn:focus { outline: none; box-shadow: none; }
+  #join-loop-btn:focus-visible {
+    outline: 3px solid var(--primary);
+    outline-offset: 2px;
+    box-shadow: 0 10px 30px rgba(209,111,247,0.12);
+  }
+
   @media (max-width: 720px){
     .modal-inner{ flex-direction:column }
     .modal-image{ width:100%; height:180px }
