@@ -26,7 +26,7 @@
         <li><a href="#about">About</a></li>
         <li><a href="#events">Events</a></li>
         <li><a href="#gallery">Gallery</a></li>
-        <li><a href="#join">Join</a></li>
+        <li><a href="https://docs.google.com/forms/d/e/1FAIpQLScToXbnv6JjncAEzW4OwCSl7fuSXsn9aFP0jivcJ_7AAPz_mQ/viewform" target="_blank" rel="noopener">Join</a></li>
       </ul>
     </nav>
     <a href="https://linktr.ee/usmgwc" class="btn-primary">Join Us</a>
@@ -52,19 +52,57 @@
     </div>
   </section>
 
-  <!-- Join modal for 'Join The Loop' (QR + code) -->
+  <!-- Join modal for 'Join The Loop' (Fall 2025 form + QR code) -->
   <div id="join-modal" class="modal" role="dialog" aria-modal="true" aria-hidden="true">
     <div class="modal-overlay" data-close="true"></div>
     <div class="modal-panel" role="document">
       <button class="modal-close" aria-label="Close join dialog">✕</button>
       <div class="modal-inner join-modal-inner">
-        <div class="join-qr-wrap">
-          <img src="" alt="Join QR code" class="join-qr" />
-          <p class="join-code">CL56644</p>
+        <div class="join-header">
+          <button class="tab-btn active" data-tab="form">Fall 2025 Form</button>
+          <button class="tab-btn" data-tab="qr">QR Code</button>
         </div>
-        <div class="join-actions">
-          <p>Scan this QR code or click the button below to open the Join the Loop.</p>
-          <a href="#" class="btn-outline modal-cta join-open-link" target="_blank" rel="noopener">Open site</a>
+
+        <div class="join-body">
+          <div class="join-form" data-tab-content="form">
+            <h3>Join The Loop — Fall 2025</h3>
+            <p>Please fill out this short form to join our Fall 2025 cohort. We'll contact you with next steps.</p>
+            <form id="fall2025Form">
+              <label for="name">Full name</label>
+              <input id="name" name="name" type="text" required />
+
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" required />
+
+              <label for="major">Major / Program</label>
+              <input id="major" name="major" type="text" />
+
+              <label for="year">Year (e.g., Freshman, Sophomore)</label>
+              <input id="year" name="year" type="text" />
+
+              <label for="interest">What are you interested in learning?</label>
+              <textarea id="interest" name="interest" rows="3"></textarea>
+
+              <div class="form-actions">
+                <button type="submit" class="btn-primary">Submit</button>
+                <button type="button" class="btn-outline" id="form-cancel">Cancel</button>
+              </div>
+            </form>
+            <div id="form-success" class="form-success" hidden>
+              <p>Thanks! Your response has been recorded. We'll be in touch about Fall 2025.</p>
+            </div>
+          </div>
+
+          <div class="join-qr" data-tab-content="qr" hidden>
+            <div class="join-qr-wrap">
+              <img src="" alt="Join QR code" class="join-qr-image" />
+              <p class="join-code">CL56644</p>
+            </div>
+            <div class="join-actions">
+              <p>Scan this QR code or open the join link.</p>
+              <a href="#" class="btn-outline modal-cta join-open-link" target="_blank" rel="noopener">Open site</a>
+            </div>
+          </div>
         </div>
       </div>
     </div>
