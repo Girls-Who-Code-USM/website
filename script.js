@@ -127,6 +127,22 @@
 	// expose small API for debugging
 	window.GWCEvents = { render: renderEvents, events };
 
+	/* Mobile nav toggle */
+	(function(){
+		const header = document.querySelector('.navbar');
+		const toggle = document.querySelector('.nav-toggle');
+		if(!header || !toggle) return;
+		toggle.addEventListener('click', ()=>{
+			const expanded = toggle.getAttribute('aria-expanded') === 'true';
+			toggle.setAttribute('aria-expanded', String(!expanded));
+			header.classList.toggle('nav-open');
+		});
+		// close when clicking a nav link
+		document.querySelectorAll('.navbar nav a').forEach(a=>{
+			a.addEventListener('click', ()=>{ header.classList.remove('nav-open'); toggle.setAttribute('aria-expanded','false'); });
+		});
+	})();
+
 	/* Join modal (Join The Loop) handling */
 	const joinBtn = document.getElementById('join-loop-btn');
 	const joinModal = document.getElementById('join-modal');
