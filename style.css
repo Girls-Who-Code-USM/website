@@ -70,6 +70,28 @@
     list-style: none;
   }
 
+  /* Desktop nav layout: make nav a horizontal flex container and keep CTA aligned */
+  .navbar nav {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .navbar nav ul {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .navbar .nav-cta {
+    margin-left: 1rem;
+    white-space: nowrap;
+    display: inline-block;
+  }
+
   /* Mobile nav toggle (hidden on wide screens) */
   .nav-toggle {
     display: none;
