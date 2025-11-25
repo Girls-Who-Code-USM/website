@@ -14,7 +14,7 @@
 		},
 		{
 			id: 'e2',
-			title: 'Organnizational Events',
+			title: 'Organizational Events',
 			type: 'monthly',
 			badge: 'Monthly',
 			desc: 'Fun social events to network and unwind with fellow members. Includes game nights, movie screenings, and more!',
@@ -25,7 +25,7 @@
 		},
 		{
 			id: 'e3',
-			title: 'Tech Talk Series- GWC Nationaal Organized',
+			title: 'Tech Talk Series National Organized',
 			type: 'monthly',
 			badge: 'Monthly',
 			desc: 'Guest speakers from industry share insights about careers in tech and latest innovations.',
