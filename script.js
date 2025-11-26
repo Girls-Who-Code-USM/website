@@ -35,7 +35,7 @@
 			url: '#'
 		},
 		{
-			id: 'e3',
+			id: 'e4',
 			title: 'Girls Who Code Hackathon',
 			type: 'annual',
 			badge: 'Annual',
@@ -221,6 +221,27 @@
 		// ensure Escape closes join modal as well
 		document.addEventListener('keydown', (e)=>{ if(e.key === 'Escape') joinModal.setAttribute('aria-hidden','true'); });
 	}
+		// Tab switching for join modal
+		const joinTabButtons = joinModal.querySelectorAll(".tab-btn");
+		const joinTabContents = joinModal.querySelectorAll("[data-tab-content]");
 
+		joinTabButtons.forEach(btn => {
+ 			 btn.addEventListener("click", () => {
+
+   		// Update button active state
+		 joinTabButtons.forEach(b => b.classList.remove("active"));
+   		 btn.classList.add("active");
+
+   		 // Show the correct tab pane
+   		 const selected = btn.dataset.tab;
+   		 joinTabContents.forEach(content => {
+   		   if (content.dataset.tabContent === selected) {
+     	   content.hidden = false;     // show the chosen section
+		    } else {
+    	    content.hidden = true;      // hide all others
+			}
+		});
+	});
+});
 })();
 
