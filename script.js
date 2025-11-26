@@ -158,7 +158,7 @@
 	const joinBtn = document.getElementById('join-loop-btn');
 	const joinModal = document.getElementById('join-modal');
 	if(joinBtn && joinModal){
-		const joinQr = joinModal.querySelector('.join-qr');
+		const joinQr = joinModal.querySelector('.join-qr-image');
 		const joinCode = joinModal.querySelector('.join-code');
 		const joinLink = joinModal.querySelector('.join-open-link');
 
