@@ -204,11 +204,28 @@
 					joinQr.onload = function(){ this.style.display = ''; };
 				}
 			}
-			if(joinCode) joinCode.textContent = code;
-			if(joinLink) joinLink.href = url;
-			setTimeout(()=> joinModal.querySelector('.modal-close').focus(),50);
+		if(joinCode) joinCode.textContent = code;
+		if(joinLink) joinLink.href = url;
+		// copy button (if present) copies the code to clipboard
+		const copyBtnEl = joinModal.querySelector('#copy-code-btn');
+		if(copyBtnEl){
+			copyBtnEl.onclick = function(){
+				const text = (joinCode && joinCode.textContent) ? joinCode.textContent.trim() : '';
+				if(!text) return;
+				if(navigator.clipboard && navigator.clipboard.writeText){
+					navigator.clipboard.writeText(text).then(()=>{
+						const prev = copyBtnEl.textContent;
+						copyBtnEl.textContent = 'Copied!';
+						setTimeout(()=> copyBtnEl.textContent = prev, 1400);
+					}).catch(()=>{});
+				} else {
+					const ta = document.createElement('textarea'); ta.value = text; document.body.appendChild(ta); ta.select(); try{ document.execCommand('copy'); }catch(e){} ta.remove();
+					const prev = copyBtnEl.textContent; copyBtnEl.textContent = 'Copied!'; setTimeout(()=> copyBtnEl.textContent = prev, 1400);
+				}
+			};
 		}
-
+		setTimeout(()=> joinModal.querySelector('.modal-close').focus(),50);
+		}
 		joinBtn.addEventListener('click', ()=> openJoinModalFromBtn(joinBtn));
 
 		// close handling for join modal
