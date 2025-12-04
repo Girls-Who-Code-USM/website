@@ -13,9 +13,7 @@
 			{baseX: 50, y: 80, w: 120, speed: 0.02, wobble: 1.5},
 			{baseX: 300, y: 150, w: 100, speed: 0.015, wobble: 1.2},
 			{baseX: 600, y: 100, w: 140, speed: 0.025, wobble: 1.8},
-			{baseX: 50, y: 80, w: 120, speed: 0.02, wobble: 1.5},
 			{baseX: 150, y: 300, w: 110, speed: 0.018, wobble: 1.3},
-			{baseX: 600, y: 100, w: 140, speed: 0.025, wobble: 1.8},
 			{baseX: 550, y: 280, w: 130, speed: 0.022, wobble: 1.6}
 		];
 
