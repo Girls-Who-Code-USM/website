@@ -35,7 +35,7 @@
 			url: '#'
 		},
 		{
-			id: 'e4',
+			id: 'e3',
 			title: 'Girls Who Code Hackathon',
 			type: 'annual',
 			badge: 'Annual',
@@ -134,7 +134,6 @@
 
 	// initial render
 	renderEvents('all');
-<<<<<<< Updated upstream
 
 	// expose small API for debugging
 	window.GWCEvents = { render: renderEvents, events };
@@ -222,139 +221,6 @@
 		// ensure Escape closes join modal as well
 		document.addEventListener('keydown', (e)=>{ if(e.key === 'Escape') joinModal.setAttribute('aria-hidden','true'); });
 	}
-		// Tab switching for join modal
-		const joinTabButtons = joinModal.querySelectorAll(".tab-btn");
-		const joinTabContents = joinModal.querySelectorAll("[data-tab-content]");
 
-		joinTabButtons.forEach(btn => {
- 			 btn.addEventListener("click", () => {
-
-   		// Update button active state
-		 joinTabButtons.forEach(b => b.classList.remove("active"));
-   		 btn.classList.add("active");
-
-   		 // Show the correct tab pane
-   		 const selected = btn.dataset.tab;
-   		 joinTabContents.forEach(content => {
-   		   if (content.dataset.tabContent === selected) {
-     	   content.hidden = false;     // show the chosen section
-		    } else {
-    	    content.hidden = true;      // hide all others
-			}
-		});
-	});
-});
 })();
 
-=======
-
-	// expose small API for debugging
-	window.GWCEvents = { render: renderEvents, events };
-
-	/* Mobile nav toggle */
-	(function(){
-		const header = document.querySelector('.navbar');
-		const toggle = document.querySelector('.nav-toggle');
-		if(!header || !toggle) return;
-		toggle.addEventListener('click', ()=>{
-			const expanded = toggle.getAttribute('aria-expanded') === 'true';
-			toggle.setAttribute('aria-expanded', String(!expanded));
-			header.classList.toggle('nav-open');
-		});
-		// close when clicking a nav link
-		document.querySelectorAll('.navbar nav a').forEach(a=>{
-			a.addEventListener('click', ()=>{ header.classList.remove('nav-open'); toggle.setAttribute('aria-expanded','false'); });
-		});
-	})();
-
-	/* Join modal (Join The Loop) handling */
-	const joinBtn = document.getElementById('join-loop-btn');
-	const joinModal = document.getElementById('join-modal');
-	if(joinBtn && joinModal){
-		const joinQr = joinModal.querySelector('.join-qr-image');
-		const joinCode = joinModal.querySelector('.join-code');
-		const joinLink = joinModal.querySelector('.join-open-link');
-
-		function openJoinModalFromBtn(btn){
-			const url = btn.dataset.url || '#';
-			const qr = btn.dataset.qr || '';
-			const code = btn.dataset.code || '';
-			joinModal.setAttribute('aria-hidden','false');
-			if(joinQr){
-				// Helper to generate a QR via qrserver (fallback)
-				const generateQrFor = (payload) => {
-					const encoded = encodeURIComponent(payload);
-					return `https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=${encoded}`;
-				};
-
-				// Decide what payload to encode: prefer the join URL, otherwise the numeric code
-				const fallbackPayload = url || code || `CL${code}`;
-
-				if(qr){
-					// try the provided QR path first; if it fails, fall back to generated QR
-					joinQr.style.display = '';
-					joinQr.src = qr;
-					joinQr.alt = `QR code for ${code}`;
-					let triedFallback = false;
-					joinQr.onerror = function(){
-						if(triedFallback) {
-							this.style.display = 'none';
-							this.removeAttribute('src');
-							this.alt = '';
-							return;
-						}
-						triedFallback = true;
-						this.src = generateQrFor(fallbackPayload);
-						this.alt = `QR code for ${fallbackPayload}`;
-					};
-					joinQr.onload = function(){ this.style.display = ''; };
-				} else {
-					// No provided image — generate one from the join URL or code
-					joinQr.style.display = '';
-					joinQr.src = generateQrFor(fallbackPayload);
-					joinQr.alt = `QR code for ${fallbackPayload}`;
-					joinQr.onerror = function(){ this.style.display = 'none'; this.removeAttribute('src'); this.alt = ''; };
-					joinQr.onload = function(){ this.style.display = ''; };
-				}
-			}
-			if(joinCode) joinCode.textContent = code;
-			if(joinLink) joinLink.href = url;
-			setTimeout(()=> joinModal.querySelector('.modal-close').focus(),50);
-		}
-
-		joinBtn.addEventListener('click', ()=> openJoinModalFromBtn(joinBtn));
-
-		// close handling for join modal
-		joinModal.addEventListener('click', (e)=>{
-			if(e.target.matches('[data-close]') || e.target.classList.contains('modal-close')){
-				joinModal.setAttribute('aria-hidden','true');
-			}
-		});
-
-		// ensure Escape closes join modal as well
-		document.addEventListener('keydown', (e)=>{ if(e.key === 'Escape') joinModal.setAttribute('aria-hidden','true'); });
-	}
-		// Tab switching for join modal
-		const joinTabButtons = joinModal.querySelectorAll(".tab-btn");
-		const joinTabContents = joinModal.querySelectorAll("[data-tab-content]");
-
-		joinTabButtons.forEach(btn => {
- 			 btn.addEventListener("click", () => {
-
-   		// Update button active state
-		 joinTabButtons.forEach(b => b.classList.remove("active"));
-   		 btn.classList.add("active");
-
-   		 // Show the correct tab pane
-   		 const selected = btn.dataset.tab;
-   		 joinTabContents.forEach(content => {
-   		   if (content.dataset.tabContent === selected) {
-     	   content.hidden = false;     // show the chosen section
-		    } else {
-    	    content.hidden = true;      // hide all others
-			}
-		});
-	});
-});
-})();
->>>>>>> Stashed changes
