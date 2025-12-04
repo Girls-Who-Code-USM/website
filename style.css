@@ -195,12 +195,13 @@
   .overlay {
     position: absolute;
     inset: 0;
-    background: rgba(0,0,0,0.3);
+    background: rgba(0,0,0,0.25);
+    z-index: 1;
   }
   
   .hero-content {
     position: relative;
-    z-index: 1;
+    z-index: 2;
     max-width: 700px;
   }
   
