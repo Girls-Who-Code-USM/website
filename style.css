@@ -30,7 +30,7 @@
   /* NAVBAR */
   .navbar {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     padding: 1rem 3rem;
     background: rgba(255,255,255,0.8);
@@ -39,12 +39,15 @@
     position: sticky;
     top: 0;
     z-index: 100;
+    gap: 3rem;
   }
   
   .logo {
     display: flex;
     align-items: center;
     gap: 10px;
+    position: absolute;
+    left: 3rem;
   }
   
   .logo-circle {
@@ -87,9 +90,11 @@
   }
 
   .navbar .nav-cta {
-    margin-left: 1rem;
+    margin-left: auto;
     white-space: nowrap;
     display: inline-block;
+    position: absolute;
+    right: 3rem;
   }
 
   /* Mobile nav toggle (hidden on wide screens) */
@@ -167,13 +172,24 @@
   /* HERO */
   .hero {
     position: relative;
-    background: url('https://placehold.co/1600x800') center/cover no-repeat;
+    background: linear-gradient(135deg, #ffc0e0 0%, #ffb3d9 50%, #ff99cc 100%);
     color: white;
     text-align: center;
     height: 90vh;
     display: flex;
     align-items: center;
     justify-content: center;
+    overflow: hidden;
+  }
+  
+  .hero-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    cursor: crosshair;
+    z-index: 0;
   }
   
   .overlay {

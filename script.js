@@ -1,4 +1,99 @@
 (function(){
+	/* Hero Canvas - Interactive Drawing */
+	const canvas = document.getElementById('hero-canvas');
+	if(canvas){
+		const ctx = canvas.getContext('2d');
+		let isDrawing = false;
+		let lastX = 0;
+		let lastY = 0;
+		let animationTime = 0;
+
+		// Cloud objects with animation properties
+		const clouds = [
+			{baseX: 50, y: 80, w: 120, speed: 0.02, wobble: 1.5},
+			{baseX: 300, y: 150, w: 100, speed: 0.015, wobble: 1.2},
+			{baseX: 600, y: 100, w: 140, speed: 0.025, wobble: 1.8},
+			{baseX: 150, y: 300, w: 110, speed: 0.018, wobble: 1.3},
+			{baseX: 550, y: 280, w: 130, speed: 0.022, wobble: 1.6}
+		];
+
+		function resizeCanvas(){
+			canvas.width = canvas.offsetWidth;
+			canvas.height = canvas.offsetHeight;
+		}
+
+		function drawCloud(x, y, w){
+			ctx.beginPath();
+			ctx.arc(x, y, w/3, 0, Math.PI*2);
+			ctx.arc(x+w/2, y, w/2.5, 0, Math.PI*2);
+			ctx.arc(x+w, y, w/3, 0, Math.PI*2);
+			ctx.fill();
+		}
+
+		function drawClouds(){
+			ctx.clearRect(0, 0, canvas.width, canvas.height);
+			ctx.fillStyle = 'rgba(255, 255, 255, 0.2)';
+
+			clouds.forEach(cloud => {
+				// Horizontal drift: continuous movement with loop
+				const driftX = (animationTime * cloud.speed) % (canvas.width + cloud.w);
+				// Vertical wobble: smooth up/down motion
+				const wobbleY = Math.sin(animationTime * 0.001 * cloud.wobble) * 15;
+				// Final position
+				const finalX = (cloud.baseX + driftX) % (canvas.width + cloud.w);
+				const finalY = cloud.y + wobbleY;
+				drawCloud(finalX, finalY, cloud.w);
+			});
+		}
+
+		function animate(){
+			animationTime++;
+			drawClouds();
+			requestAnimationFrame(animate);
+		}
+
+		function startDrawing(e){
+			isDrawing = true;
+			const rect = canvas.getBoundingClientRect();
+			lastX = e.clientX - rect.left;
+			lastY = e.clientY - rect.top;
+		}
+
+		function draw(e){
+			if(!isDrawing) return;
+			const rect = canvas.getBoundingClientRect();
+			const x = e.clientX - rect.left;
+			const y = e.clientY - rect.top;
+			ctx.strokeStyle = '#e5bff4ff';
+			ctx.lineWidth = 3;
+			ctx.lineCap = 'round';
+			ctx.lineJoin = 'round';
+			ctx.globalAlpha = 0.8;
+			ctx.beginPath();
+			ctx.moveTo(lastX, lastY);
+			ctx.lineTo(x, y);
+			ctx.stroke();
+			lastX = x;
+			lastY = y;
+		}
+
+		function stopDrawing(){
+			isDrawing = false;
+		}
+
+		resizeCanvas();
+		window.addEventListener('resize', resizeCanvas);
+		canvas.addEventListener('mousedown', startDrawing);
+		canvas.addEventListener('mousemove', draw);
+		canvas.addEventListener('mouseup', stopDrawing);
+		canvas.addEventListener('mouseleave', stopDrawing);
+		canvas.addEventListener('touchstart', (e)=> startDrawing(e.touches[0]));
+		canvas.addEventListener('touchmove', (e)=> draw(e.touches[0]));
+		canvas.addEventListener('touchend', stopDrawing);
+		// Start animation loop
+		animate();
+	}
+	
 	// Event data — update or extend this array to add more events
 	const events = [
 		{
