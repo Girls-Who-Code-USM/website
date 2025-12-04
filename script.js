@@ -2,6 +2,10 @@
 	/* Hero Canvas - Interactive Drawing */
 	const canvas = document.getElementById('hero-canvas');
 	if(canvas){
+		// Debug info to help diagnose rendering issues
+		try{
+			console.log('hero-canvas found — offset size:', canvas.offsetWidth, 'x', canvas.offsetHeight);
+		} catch(e){ console.warn('hero-canvas debug log failed', e); }
 		const ctx = canvas.getContext('2d');
 		let isDrawing = false;
 		let lastX = 0;
@@ -32,7 +36,7 @@
 
 		function drawClouds(){
 			ctx.clearRect(0, 0, canvas.width, canvas.height);
-			ctx.fillStyle = 'rgba(239, 202, 202, 0.2)';
+			ctx.fillStyle = 'rgba(240, 233, 233, 0.2)';
 
 			clouds.forEach(cloud => {
 				// Horizontal drift: continuous movement with loop
@@ -64,7 +68,7 @@
 			const rect = canvas.getBoundingClientRect();
 			const x = e.clientX - rect.left;
 			const y = e.clientY - rect.top;
-			ctx.strokeStyle = '#eed2ebff';
+			ctx.strokeStyle = '#edb1e8ff';
 			ctx.lineWidth = 3;
 			ctx.lineCap = 'round';
 			ctx.lineJoin = 'round';
