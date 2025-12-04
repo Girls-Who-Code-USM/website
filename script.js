@@ -13,7 +13,9 @@
 			{baseX: 50, y: 80, w: 120, speed: 0.02, wobble: 1.5},
 			{baseX: 300, y: 150, w: 100, speed: 0.015, wobble: 1.2},
 			{baseX: 600, y: 100, w: 140, speed: 0.025, wobble: 1.8},
+			{baseX: 50, y: 80, w: 120, speed: 0.02, wobble: 1.5},
 			{baseX: 150, y: 300, w: 110, speed: 0.018, wobble: 1.3},
+			{baseX: 600, y: 100, w: 140, speed: 0.025, wobble: 1.8},
 			{baseX: 550, y: 280, w: 130, speed: 0.022, wobble: 1.6}
 		];
 
@@ -32,7 +34,7 @@
 
 		function drawClouds(){
 			ctx.clearRect(0, 0, canvas.width, canvas.height);
-			ctx.fillStyle = 'rgba(255, 255, 255, 0.2)';
+			ctx.fillStyle = 'rgba(239, 202, 202, 0.2)';
 
 			clouds.forEach(cloud => {
 				// Horizontal drift: continuous movement with loop
@@ -64,7 +66,7 @@
 			const rect = canvas.getBoundingClientRect();
 			const x = e.clientX - rect.left;
 			const y = e.clientY - rect.top;
-			ctx.strokeStyle = '#e5bff4ff';
+			ctx.strokeStyle = '#eed2ebff';
 			ctx.lineWidth = 3;
 			ctx.lineCap = 'round';
 			ctx.lineJoin = 'round';
